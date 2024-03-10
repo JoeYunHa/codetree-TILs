@@ -18,8 +18,10 @@ int main() {
 		for (int j{ 0 }; j < target_len; j++) {
 			if (input_str[i + j] == target_str[j])
 				exi = true;
-			else
+			else {
+				exi = false;
 				break;
+			}
 		}
 		if (exi) {
 			start_idx = i;
