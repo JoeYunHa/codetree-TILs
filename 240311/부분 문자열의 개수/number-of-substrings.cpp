@@ -5,27 +5,19 @@ using namespace std;
 int main() {
 	string input_str;
 	string target_str;
+	int cnt{ 0 };
 	cin >> input_str;
 	cin >> target_str;
 
-	int input_len = input_str.length();
-	int target_len = target_str.length();
+	int len = input_str.length();
 
-	int cnt{ 0 };
-	bool exi = false;
-
-	for (int i{ 0 }; i < input_len - target_len + 1; i++) {
-		for (int j{ 0 }; j < target_len; j++) {
-			if (input_str[i + j] == target_str[j])
-				exi = true;
-			else {
-				exi = false;
-				break;
-			}
-		}
-		if (exi)
+	for (int i{ 0 }; i < len - 1; i++) {
+		if (input_str[i] == target_str[0] && input_str[i + 1] == target_str[1])
 			cnt++;
 	}
 
 	cout << cnt;
+
+	return 0;
+	
 }
