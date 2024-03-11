@@ -6,13 +6,15 @@ int main() {
 	string str;
 	cin >> str;
 
-	while (str.length() != 1) {
-		int idx{ 0 };
+	int len = str.length();
+
+	while (len != 1) {
+		int idx;
 		cin >> idx;
-		if (idx >= str.length()) 
-			str.erase(str.length() - 1, 1);
-		else 
-			str.erase(idx, 1);
+		if (idx >= len)
+			idx = len - 1;
+		str.erase(idx, 1);
+		len--;
 		cout << str << endl;
 	}
 	
